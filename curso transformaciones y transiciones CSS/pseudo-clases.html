@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pseudo clases</title>
+    <style>
+      body {
+        font-size: 2rem;
+      }
+      /* Una pseudo clase es un estado del elemento, clickeado, click, visitado, encima */
+      /* la pseudo clase link, modifica aquellos links no visitados */
+      a:link {
+        color: hotpink;
+      }
+      /* esta pseudo clase es para modifcar links visitados */
+      a:visited {
+        color: black;
+      }
+      /* esta pseudo clase es para cuando se pone el mouse encima */
+      a:hover {
+        color: greenyellow;
+      }
+
+      p:not(.maravillas) {
+        color: turquoise;
+      }
+
+      .container div:nth-child(1) {
+        color: lightcoral;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#">Alicia</a>
+    <p>en el</p>
+    <p class="maravillas">país</p>
+    <div class="container">
+      <div>alicia</div>
+      <div>alicia</div>
+      <div>alicia</div>
+    </div>
+  </body>
+</html>
