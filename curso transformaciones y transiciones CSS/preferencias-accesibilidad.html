@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>acesiblidad</title>
+    <style>
+      .card {
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        position: relative;
+        transition: transform 0.7s ease;
+      }
+
+      .container-card:hover .card {
+        transform: rotateY(180deg);
+      }
+
+      .face {
+        width: 100%;
+        height: 100%;
+        border-radius: 10%;
+        position: absolute;
+        backface-visibility: hidden;
+      }
+
+      .face.front {
+        background: pink;
+      }
+      .face.back {
+        background: papayawhip;
+        transform: rotateY(180deg);
+      }
+
+      /* modo accesible */
+      /* para emular que esta activado, en el inspector ctrl+shift+p, y escribir reduce */
+      @media (prefers-reduced-motion: reduce) {
+        /* esta es la forma mas facil de desactivar cualquier animacion. */
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- lo encerramos dentro de un container-card, para evitar el parpadeo -->
+    <div class="container-card">
+      <div class="card">
+        <div class="face front"></div>
+        <div class="face back"></div>
+      </div>
+    </div>
+  </body>
+</html>

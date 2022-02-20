@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transition timing</title>
+    <style>
+      .container:hover .circle {
+        transform: translateX(200px);
+      }
+      .circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+
+      .one {
+        background: lavender;
+        transition: transform 1s linear;
+      }
+      .two {
+        background: thistle;
+        transition: transform 1s ease;
+        transition-delay: 1.5s;
+      }
+      .three {
+        background: plum;
+        transition: transform 1s ease-in;
+        transition-delay: 2.5s;
+      }
+      .four {
+        background: violet;
+        transition: transform 1s linear;
+        transition-delay: 3.5s;
+      }
+      .five {
+        background: orchid;
+        transition: transform 1s ease-in-out;
+        transition-delay: 4.5s;
+      }
+      .six {
+        background: fuchsia;
+        transition: transform 1s ease-out;
+        transition-delay: 5.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="circle one"></div>
+      <div class="circle two"></div>
+      <div class="circle three"></div>
+      <div class="circle four"></div>
+      <div class="circle five"></div>
+      <div class="circle six"></div>
+    </div>
+  </body>
+</html>

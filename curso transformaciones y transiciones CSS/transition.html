@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transition</title>
+    <style>
+      .container {
+        width: 22vw;
+        height: 100px;
+        background: cornsilk;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 40px;
+        margin-left: 30px;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+      }
+
+      .container:hover .box {
+        transform: scale(1.1);
+      }
+
+      .one {
+        background: indianred;
+        transition: transform 0.2s;
+      }
+      .two {
+        background: mediumseagreen;
+        transition: transform 0.1s;
+      }
+      .three {
+        background: rgb(115, 115, 214);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box one"></div>
+      <div class="box two"></div>
+      <div class="box three"></div>
+    </div>
+  </body>
+</html>
