@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>apilamiento</title>
+    <style>
+      /* estilos fondo */
+      body {
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        place-items: center;
+      }
+      .phone {
+        background: #ccefff;
+        width: 80%;
+        height: 90%;
+        position: relative;
+        border: 8px solid black;
+        border-radius: 20px;
+        box-shadow: 0 19px 38px black;
+      }
+      /* Medium Devices, Desktops */
+      @media only screen and (min-width: 992px) {
+        .phone {
+          width: 30%;
+          height: 95%;
+          /* background: blue; */
+        }
+      }
+      .phone div {
+        position: absolute;
+      }
+      /* establecer contexto-apilamiento */
+      .layer-1,
+      .layer-2 {
+        z-index: 1;
+      }
+      .layer-3 {
+        z-index: 2;
+      }
+      .layer-4 {
+        z-index: 3;
+      }
+      .layer-5 {
+        z-index: 4;
+      }
+      .layer-6 {
+        z-index: 5;
+      }
+      .layer-7 {
+        z-index: 6;
+      }
+
+      /* edicion layers */
+      .layer-1 {
+        height: 650px;
+        width: 80px;
+        background: #d2dbdf;
+        bottom: 0;
+        right: 150px;
+      }
+      .layer-2 {
+        height: 650px;
+        width: 80px;
+        background: #d2dbdf;
+        bottom: 0;
+        right: 270px;
+      }
+
+      .layer-3 {
+        height: 600px;
+        width: 320px;
+        background: #0b866b;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0 auto;
+      }
+
+      .layer-4 {
+        height: 450px;
+        width: 80px;
+        background: #d2dbdf;
+        bottom: 0;
+        left: 80px;
+      }
+
+      .layer-5 {
+        height: 400px;
+        width: 220px;
+        background: #25bb9a;
+        left: 0;
+        bottom: 0;
+      }
+
+      .layer-6 {
+        height: 350px;
+        width: 80px;
+        background: #d2dbdf;
+        bottom: 0;
+        right: 120px;
+      }
+
+      .layer-7 {
+        height: 300px;
+        width: 220px;
+        background: #25bb5e;
+        right: 40px;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="phone">
+      <div class="layer-1"></div>
+      <div class="layer-2"></div>
+      <div class="layer-3"></div>
+      <div class="layer-4"></div>
+      <div class="layer-5"></div>
+      <div class="layer-6"></div>
+      <div class="layer-7"></div>
+      <div class="layer-8"></div>
+      <div class="layer-9"></div>
+      <div class="layer-10"></div>
+    </div>
+  </body>
+</html>

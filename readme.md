@@ -42,6 +42,16 @@ https://cssreference.io/property/transform-origin/
 
 http://css3studio.com/page-css3/css-transform.php
 
+generador de patrones:
+
+https://doodad.dev/pattern-generator/
+
+https://www.magicpattern.design/tools/css-backgrounds
+
+tutorial para crear tu propio patron:
+
+https://dev.to/cchana/explained-creating-a-zigzag-pattern-with-just-css-13g1
+
 # posicionamiento de elementos
 
 explicacion general:
@@ -87,3 +97,9 @@ si usas composite no genera el resto y es muy eficiente.
 aqui tenes una tabla con todas las propiedades y su rendimiento.
 
 https://csstriggers.com/
+
+## ANimaciones
+
+### contexto de apilamiento
+
+a la hora de definir el z-index, es importante como esta estructurado el html. ya que la resolucion de apilamiento se realiza por elemento y sus hijos, entonces si queres apilar un elemento con respecto a otro y no comparten padre, tendras que asegurarte de que este bien puesto en el html.

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* LOGICA INCREMENTAR CONTADOR */
+      body{
+        counter-reset: game;
+      }
+      input:checked{
+        counter-increment: game;
+      }
+      .total-count::after{
+        content: counter(game);
+      }
+      /* FIN logica */
+
+    </style>
+  </head>
+  <body>
+    <ul>
+      <in>
+        <input type="checkbox"><div class="shield"></div></input>
+        <input type="checkbox"><div class="shield"></div></input>
+        <input type="checkbox"><div class="shield"></div></input>
+        <input type="checkbox"><div class="shield"></div></input>
+        <input type="checkbox"><div class="shield"></div></input>
+        <input type="checkbox"><div class="shield"></div></input>
+        <input type="checkbox"><div class="shield"></div></input>
+        <input type="checkbox"><div class="shield"></div></input>
+        <input type="checkbox"><div class="shield"></div></input>
+        <input type="checkbox"><div class="shield"></div></input>
+
+      </li>
+    </ul>
+    <h3 class="total-count">Score: </h3>
+  </body>
+</html>
