@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>animando ojo</title>
+    <title>moviendo conejo</title>
     <style>
       /* estilos fondo */
       body {
@@ -57,8 +57,9 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        z-index: 999;
+        z-index: 500;
         box-shadow: inset 0px 0px 50px 7px #71cbf5;
+        pointer-events: none;
       }
 
       /* establecer contexto-apilamiento */
@@ -93,15 +94,45 @@
 
       /* edicion layers */
       .layer-1 {
-        /* height: 650px; */
         height: 664px;
-
         right: 150px;
+        animation-name: layer;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in;
       }
-      .layer-2 {
-        height: 650px;
 
+      @keyframes layer {
+        0% {
+          transform: translateY(0px);
+        }
+        25% {
+          transform: translateY(100px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .layer-2 {
+        height: 664px;
         right: 270px;
+        animation-name: layer2;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-out;
+      }
+
+      @keyframes layer2 {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(70px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
       }
 
       .layer-3 {
@@ -115,9 +146,24 @@
       }
 
       .layer-4 {
-        height: 450px;
-
+        height: 462px;
         left: 80px;
+        animation-name: layer4;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-out;
+      }
+
+      @keyframes layer4 {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(70px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
       }
 
       .layer-5 {
@@ -129,9 +175,39 @@
       }
 
       .layer-6 {
-        height: 350px;
-
+        height: 364px;
         right: 120px;
+        animation-name: layer6;
+        animation-duration: 0.8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+      }
+      @keyframes layer6 {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(70px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      /* cuando le haces click se dejan de ver un cachito */
+      .desaparecer {
+        animation: desaparecer 0.3s linear;
+        animation-fill-mode: forwards;
+      }
+      @keyframes desaparecer {
+        0% {
+          opacity: 1;
+          transform: rotateZ(0deg) scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: rotateZ(10deg) scale(0.7);
+        }
       }
 
       .layer-7 {
@@ -189,6 +265,7 @@
         border-radius: 50%;
         top: 36px;
         box-shadow: 6px 6px 8px 0px rgba(0, 0, 0, 0.31);
+        cursor: pointer;
       }
 
       .eye {
@@ -257,6 +334,14 @@
         background-position: -10px 0, -70px 0, 0 0, 0 0;
         background-size: 10px 80px;
       }
+
+      .score {
+        position: absolute;
+        top: 12%;
+        left: 30%;
+        right: 0px;
+        font-size: 28px;
+      }
     </style>
   </head>
   <body>
@@ -313,10 +398,56 @@
         <div class="pasto"></div>
         <div class="picos-tierra"></div>
       </div>
-      <div class="layer-8"></div>
-      <div class="layer-9"></div>
-      <div class="layer-10"></div>
+
+      <div class="score">Kills:</div>
       <div class="glass"></div>
     </div>
+
+    <script>
+      function executeAnimationDesaparecer(contenedor) {
+        const objetivo = document.querySelector(contenedor);
+        objetivo.classList.add("desaparecer");
+        setTimeout(() => {
+          objetivo.classList.remove("desaparecer");
+        }, 1 * 1000);
+      }
+      const score = document.querySelector(".score");
+      const contenedorPuntos = new Proxy(
+        { puntos: 0 },
+        {
+          set(target, key, value) {
+            target[key] = target[key] + value;
+
+            score.innerHTML = "Kills: " + target[key];
+          },
+          get(target, key) {
+            return target[key];
+          },
+        }
+      );
+      const cabeza1 = document.querySelector(".layer-1 .head");
+      cabeza1.addEventListener("click", () => {
+        contenedorPuntos.puntos = 1;
+        executeAnimationDesaparecer(".layer-1");
+      });
+
+      const cabeza2 = document.querySelector(".layer-2 .head");
+      cabeza2.addEventListener("click", () => {
+        contenedorPuntos.puntos = 1;
+        executeAnimationDesaparecer(".layer-2");
+      });
+
+      const cabeza3 = document.querySelector(".layer-4 .head");
+      cabeza3.addEventListener("click", () => {
+        contenedorPuntos.puntos = 1;
+        executeAnimationDesaparecer(".layer-4");
+      });
+
+      const cabeza4 = document.querySelector(".layer-6 .head");
+      cabeza4.addEventListener("click", () => {
+        contenedorPuntos.puntos = 1;
+        executeAnimationDesaparecer(".layer-6");
+      });
+    </script>
   </body>
 </html>
