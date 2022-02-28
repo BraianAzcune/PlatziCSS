@@ -52,6 +52,10 @@ tutorial para crear tu propio patron:
 
 https://dev.to/cchana/explained-creating-a-zigzag-pattern-with-just-css-13g1
 
+fuentes para el navegador:
+
+https://fonts.google.com/
+
 # posicionamiento de elementos
 
 explicacion general:
