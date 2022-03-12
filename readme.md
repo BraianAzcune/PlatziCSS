@@ -27,6 +27,9 @@ https://html-css-js.com/css/generator/box-shadow/
 gradientes bonitos y faciles
 https://cssgradient.io/gradient-backgrounds/
 
+ver la creacion con grid-layout
+https://cssgrid-generator.netlify.app/
+
 entender el funcionamiento de
 
 ```bash
